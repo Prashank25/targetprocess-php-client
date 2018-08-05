@@ -53,6 +53,12 @@ class BaseCollection {
         return $this;
     }
 
+    public function delete($id) {
+        $this->response = $this->connection->delete($this->url . $id . '/');
+
+        return $this;
+    }
+
     public function open($name, $args = null) {
         $module_class = 'ToEcto\\TargetprocessPHPClient\\Modules\\'.$name;
         if (!class_exists($module_class)) {

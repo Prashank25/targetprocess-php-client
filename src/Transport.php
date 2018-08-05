@@ -28,6 +28,10 @@ class Transport {
         return $this->send('post', $collection, $body, $query);
     }
 
+    public function delete($collection, $query = null) {
+        return $this->send('delete', $collection, null, $query);
+    }
+
     protected function send($method, $collection, $body = null, $query = null) {
         $data = array();
         if ($query) {
